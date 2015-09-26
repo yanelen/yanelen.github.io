@@ -15,11 +15,11 @@ var game = {
     this.count += 1;
     if (this.count % 2 === 0) {
       this.player = "O";
-      $('#message').text("O, it's your turn!");
+      $('#message').text(oName + ", it's your turn!");
     }
     else {
       this.player = "X";
-      $('#message').text("X, it's your turn!");
+      $('#message').text(xName + ", it's your turn!");
     }
     if (this.count >= 5) {
       this.determine();
@@ -141,7 +141,7 @@ var game = {
     })
   },
   rematch: function() {
-    $('#message').text("X, it's your turn!");
+    $('#message').text(xName," it's your turn!");
     this.count = 1;
     this.player = "X";
     this.position = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
@@ -177,7 +177,9 @@ PlayerView.prototype.setHandlers = function () {
 }
 
 var playerInput = $('#player-input'),
-    counter = 0;
+    counter = 0,
+    xName = "",
+    oName = "";
 
 playerInput.on('keypress', function (e) {
   if (e.charCode === 13) {
@@ -201,6 +203,7 @@ playerInput.on('keypress', function (e) {
       $('#player-entry').remove();
       $('#enter').remove();
       $('#message').show();
+      $('#message').text(xName + ", it's your turn!");
       $('#points').show();
     }
   }
