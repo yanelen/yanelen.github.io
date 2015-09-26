@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, Sans-Serif;
+  color: darkgray;
+  cursor: pointer;
+}
+
+body {
+  background-color: white;
+  margin: 0 auto;
+  font-size: 18px;
+  max-width: 330px;
+  min-width: 330px;
+}
+
+.inactive {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+#title {
+  font-size: 22px;
+  text-align: left;
+  margin: 5px;
+  font-family: 'Candal', sans-serif;
+  font-weight: 400;
+  color: #74c238;
+}
+
+#board {
+  margin: 10px auto;
+  text-align: center;
+  width: 330px;
+  height: 340px;
+}
+
+.square {
+  float: left;
+  list-style: none;
+  background-color: lightblue;
+  border-radius: 10px;
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Gochi Hand', cursive;
+  line-height: 105px;
+  margin: 5px;
+  color: #72727a;
+}
+
+.square:hover {
+  background-color: #8cbcd4;
+}
+
+#rematch {
+  z-index: 1;
+  position:absolute;
+  top: -250px;
+}
+
+.button {
+   position: relative;
+   text-align: center;
+   border-top: 1px solid #f59898;
+   background: #fc3d80;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   border-radius: 31px;
+   color: white;
+   font-size: 24px;
+   text-decoration: none;
+   height: 60px;
+   width: 200px;
+   display:inline-block;
+   padding-top: 15px;
+   opacity: 0.9;
+   animation-name: animation;
+   animation-duration: .5s;
+ }
+
+.button:hover {
+   border-top-color: #d12c2c;
+   background: #eb2f71;
+   color: #ccc;
+   }
+
+.button:active {
+   border-top-color: #5c1b1b;
+   background: #d9235f;
+   }
+
+@keyframes animation {
+  0%   {opacity: 0;}
+  25%  {opacity: .2;}
+  50%  {opacity: .4;}
+  75%  {opacity: .6;}
+  100% {opacity: .8;}
+}
+
+#message, #scoreX, #scoreO, #rematch, #points {
+  position: relative;
+  font-size: 18px;
+  text-align: center;
+}
+
+#scoreX, #scoreO {
+  font-size: 30px;
+  color: black;
+}
+
+#message {
+  font-size: 24px;
+  color: hotpink;
+}
+
+#pointX {
+  position: relative;
+  top: -15px;
+  display: inline-block;
+  width: 50%;
+  float: left;
+  text-align: left;
+}
+
+#pointO {
+  position: relative;
+  top: -15px;
+  display: inline-block;
+  width: 50%;
+  float: right;
+  text-align: right;
+}
+
+.pink {
+  background-color: pink;
+  color: #fff;
+  padding: 3px 3px 0 3px;
+  line-height: 14px;
+}
+
+#container {
+  margin-top: 10px;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+#enter {
+  font-size: 24px;
+  text-align: center;
+  color: #62A6D6;
+  position: relative;
+  top: -25px;
+}
+
+#player-entry {
+  position: relative;
+  top: -15px;
+}
+
+#player-input {
+  display: inline-block;
+  margin: 10px;
+  width: 210px;
+  background: lightgray;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #000;
+  position: relative;
+  top: -15px;
+}
+
+.name {
+  line-height: 36px;
+}
+
+.players {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+footer {
+  font-size: 13px;
+  text-align: center;
+}

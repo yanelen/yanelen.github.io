@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Gochi+Hand' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div>
+      <div id="title">Tic Tac Toe</div>
+      <div id="message">X, it's your turn!</div>
+      <div>
+        <ul id="board">
+          <li class="square" id="one"></li>
+          <li class="square" id="two"></li>
+          <li class="square" id="three"></li>
+          <li class="square" id="four"></li>
+          <li class="square" id="five"></li>
+          <li class="square" id="six"></li>
+          <li class="square" id="seven"></li>
+          <li class="square" id="eight"></li>
+          <li class="square" id="nine"></li>
+        </ul>
+      </div>
+      <div id="points">
+        <div id="pointX">
+          <span class="pink">X</span>
+          <span id="xName"></span>
+          <span id="scoreX">0</span>
+        </div>
+        <div id="pointO">
+          <span class="pink">O</span>
+          <span id="oName"></span>
+          <span id="scoreO">0</span>
+        </div>
+      </div>
+      <div id="rematch"></div>
+  </div>
+  <div id="container">
+    <div id="enter">
+      Enter player's name
+    </div>
+    <section>
+      <div id="player-entry">
+        Player X
+      </div>
+      <input id="player-input" type="text" autofocus="true" maxlength="10">
+    </section>
+    <section class="players">
+    </section>
+  </div>
+  <footer>
+    © Yanelen Huang
+  </footer>
+  <script src="script.js" type='text/javascript'></script>
+  </body>
+</html>
