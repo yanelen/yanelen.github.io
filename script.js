@@ -141,7 +141,7 @@ var game = {
     })
   },
   rematch: function() {
-    $('#message').text(xName," it's your turn!");
+    $('#message').text(xName + ", it's your turn!");
     this.count = 1;
     this.player = "X";
     this.position = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
