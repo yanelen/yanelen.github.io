@@ -14,10 +14,6 @@ body {
   max-width: 330px;
 }
 
-#container {
-  margin: 0 10px 0 10px;
-}
-
 .inactive {
   opacity: 0.3;
   pointer-events: none;
@@ -149,7 +145,7 @@ body {
   z-index: 1;
   position: absolute;
   top: 134px;
-  margin-left: 29px;
+  margin-left: 20px;
 }
 
 #enter {
