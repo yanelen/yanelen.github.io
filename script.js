@@ -188,7 +188,7 @@ playerInput.on('keypress', function (e) {
   if (e.charCode === 13 && (counter === 1 || counter === 2)) {
     var player = new Player( $(this).val() );
     var playerView = new PlayerView( player );
-    var name = $(this).val()
+    var name = $(this).val();
     $('.players').append(playerView.$el);
     $(this).val("");
     if (counter === 1) {
