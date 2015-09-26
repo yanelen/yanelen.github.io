@@ -112,7 +112,7 @@ var game = {
     }
     if (this.count === 10 && this.gameOver === false) {
       $('.square').unbind();
-      $('#message').text("Draw!");
+      $('#message').text("Tie!");
       this.rematchButton();
     }
   },
@@ -203,6 +203,12 @@ playerInput.on('keypress', function (e) {
       $('#player-entry').remove();
       $('#enter').remove();
       $('#message').show();
+      if (xName == false) {
+        xName = "X";
+      }
+      if (oName == false) {
+        oName = "O";
+      }
       $('#message').text(xName + ", it's your turn!");
       $('#points').show();
     }
