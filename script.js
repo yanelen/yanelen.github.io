@@ -246,12 +246,10 @@ playerInput.on('keypress', function (e) {
       $('#oName').text(name);
       //Store the name for the message
       oName = name;
-      $('#player-input').remove();
       //Enable the game
       $('.square').removeClass('inactive');
       //Remove the input form
-      $('#player-entry').remove();
-      $('#enter').remove();
+      $('#entry-container').remove();
       //Show the message
       $('#message').show();
       //If there's no name input, set the name to X
