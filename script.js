@@ -1,16 +1,25 @@
+// initalize the game
 function initialize () {
   $('.square').addClass('inactive');
   $('#message').hide();
   $('#points').hide();
 }
 
+// game object
 var game = {
   count: 1,
+  //Store the value to render on the gameboard
   player: "X",
+  //Use it to keep track of where Xs and Os are
   position : ["0", "1", "2", "3", "4", "5", "6", "7", "8"],
+  //Store the value to render on the gameboard
   scoreX: 0,
+  //Store the value to render on the gameboard
   scoreO: 0,
   gameOver: false,
+
+  // X's turn if counter is odd, O's turn if counter is even
+  // set player to X is counter is odd, and O if counter is even
   increment: function() {
     this.count += 1;
     if (this.count % 2 === 0) {
@@ -21,10 +30,16 @@ var game = {
       this.player = "X";
       $('#message').text(xName + ", it's your turn!");
     }
+    // There can only be a winner if at least 5 moves were made.
+    //Call the determine function when the counter is greater or equal to 5
     if (this.count >= 5) {
       this.determine();
     }
   },
+  // Put X or O in the postion arry when a square is clicked
+  //(for exmaple, if square one is clicked, put the value in position[0])
+  //Render the game board when a square is clicked
+  //Call the increment function
   square: function() {
     var that = this;
     $('#one').one('click', function(){
@@ -73,7 +88,13 @@ var game = {
       that.increment();
     })
   },
+  //Determine the winner by checking if any one line has three same values
+  //The positions in accordance to the game board is as follows:
+  //position[0], position[1], position[2]
+  //position[3], position[4], position[5]
+  //position[6], position[7], position[8]
   determine: function() {
+    //Checking rows
     for (var i = 0; i < 7; i = i + 3) {
       if (this.position[i] === this.position[i+1] && this.position[i] === this.position[i+2]) {
         if (this.position[i] === "X") {
@@ -84,6 +105,7 @@ var game = {
         }
       }
     }
+    //Checking the columns
     for (var i = 0; i < 3; i++) {
       if (this.position[i] === this.position[i+3] && this.position[i] === this.position[i+6]) {
         if (this.position[i] === "X") {
@@ -94,6 +116,7 @@ var game = {
         }
       }
     }
+    //Checking the first diagonal line
     if (this.position[0] === this.position[4] && this.position[0] === this.position[8]) {
       if (this.position[0] === "X") {
         this.xWin();
@@ -102,6 +125,7 @@ var game = {
         this.oWin();
       }
     }
+    //Checking the second diagonal line
     if (this.position[2] === this.position[4] && this.position[2] === this.position[6]) {
       if (this.position[2] === "X") {
         this.xWin();
@@ -110,6 +134,7 @@ var game = {
         this.oWin();
       }
     }
+    //If 10 moves has been made and no one wins, the game is a tie.
     if (this.count === 10 && this.gameOver === false) {
       $('.square').unbind();
       $('#message').text("Tie!");
