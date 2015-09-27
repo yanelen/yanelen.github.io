@@ -1,5 +1,4 @@
-README: Tic Tac Toe by Yanelen Huang
-
+### README: Tic Tac Toe by Yanelen Huang
 
 Tic Tac Toe version 1.0 9/27/15
 
@@ -7,7 +6,7 @@ This is a Single Page Application to play the game Tic Tac Toe in an internet br
 The app is visible at: http://yanelen.github.io/
 
 
-Overview
+### Overview
 
 Two players can play this game on one machine.
 
@@ -18,12 +17,12 @@ The game board keeps track of Player X vs. Player O wins.
 After each game the players click the "REMATCH" button to start a new game.
 
 
-Getting Started
+### Getting Started
 
 installation & prerequisites: no installation necessary. Requisites: an internet connection and a browser on a desktop, a tablet or a mobile phone.
 
 
-Detailed Usage and Developer Info
+### Detailed Usage and Developer Info
 
 The app is linked to script.js.
 
