@@ -1,7 +1,10 @@
-// initalize the game
+//Initalize the game
 function initialize () {
+  //Disable the game before completing name input
   $('.square').addClass('inactive');
+  //Hide the message
   $('#message').hide();
+  //Hide the score board
   $('#points').hide();
 }
 
@@ -16,6 +19,7 @@ var game = {
   scoreX: 0,
   //Store the value to render on the gameboard
   scoreO: 0,
+  //Set game ober to false
   gameOver: false,
 
   // X's turn if counter is odd, O's turn if counter is even
@@ -31,7 +35,7 @@ var game = {
       $('#message').text(xName + ", it's your turn!");
     }
     // There can only be a winner if at least 5 moves were made.
-    //Call the determine function when the counter is greater or equal to 5
+    //Call determine() when the counter is greater or equal to 5
     if (this.count >= 5) {
       this.determine();
     }
@@ -39,9 +43,10 @@ var game = {
   // Put X or O in the postion arry when a square is clicked
   //(for exmaple, if square one is clicked, put the value in position[0])
   //Render the game board when a square is clicked
-  //Call the increment function
+  //Call increment()
   square: function() {
     var that = this;
+    // Use .one insted of .on so the square can only be clicked once
     $('#one').one('click', function(){
       $('#one').text(that.player);
       that.position[0] = that.player;
@@ -105,7 +110,7 @@ var game = {
         }
       }
     }
-    //Checking the columns
+    //Checking columns
     for (var i = 0; i < 3; i++) {
       if (this.position[i] === this.position[i+3] && this.position[i] === this.position[i+6]) {
         if (this.position[i] === "X") {
@@ -141,14 +146,19 @@ var game = {
       this.rematchButton();
     }
   },
+  //When X wins, the function will be called
   xWin: function() {
+    //Use unbind() so the squares can not be clicked
     $('.square').unbind();
+    //Render the winner message
     $('#message').text(xName + " Wins!");
     this.gameOver = true;
+    //Add one point to the score board
     this.scoreX += 1;
     $('#scoreX').text(this.scoreX.toString());
     this.rematchButton();
   },
+  //When O wins, the function will be called
   oWin: function() {
     $('.square').unbind();
     $('#message').text(oName + " Wins!");
@@ -157,6 +167,7 @@ var game = {
     $('#scoreO').text(this.scoreO.toString());
     this.rematchButton();
   },
+  //Show a REMATCH button when the game is over
   rematchButton: function() {
     $('#rematch').append('<div class="button">REMATCH</div>')
     var that = this;
@@ -165,6 +176,7 @@ var game = {
       that.rematch();
     })
   },
+  //Reset the game
   rematch: function() {
     $('#message').text(xName + ", it's your turn!");
     this.count = 1;
@@ -177,16 +189,19 @@ var game = {
   }
 }
 
+//Set the player name
 function Player (name) {
   this.name = name;
 }
 
+//Render the player
 function PlayerView (player) {
   this.player = player;
   this.$el = this.createEl();
   this.setHandlers();
 }
 
+//Create an element
 PlayerView.prototype.createEl = function () {
   var $el = $('<div class="player">'),
       name = $('<h3 class="name">');
@@ -195,6 +210,7 @@ PlayerView.prototype.createEl = function () {
   return $el;
 }
 
+//Set a handler
 PlayerView.prototype.setHandlers = function () {
   this.$el.on("click", function (e) {
     $(this).remove();
@@ -206,6 +222,9 @@ var playerInput = $('#player-input'),
     xName = "",
     oName = "";
 
+//If enter key is pressed, store the value in the player variable
+//counter checks if the enter key was press the first time or the second time
+//to know where the value should be stored
 playerInput.on('keypress', function (e) {
   if (e.charCode === 13) {
     counter += 1;
@@ -217,24 +236,35 @@ playerInput.on('keypress', function (e) {
     $('.players').append(playerView.$el);
     $(this).val("");
     if (counter === 1) {
+      //Render the name on the score board
       $('#xName').text(name);
+      //Store the name for the message
       xName = name;
     }
     else {
+      //Render the name on the score board
       $('#oName').text(name);
+      //Store the name for the message
       oName = name;
       $('#player-input').remove();
+      //Enable the game
       $('.square').removeClass('inactive');
+      //Remove the input form
       $('#player-entry').remove();
       $('#enter').remove();
+      //Show the message
       $('#message').show();
+      //If there's no name input, set the name to X
       if (xName == false) {
         xName = "X";
       }
+      //If there's no name input, set the name to O
       if (oName == false) {
         oName = "O";
       }
+      //Render the first message
       $('#message').text(xName + ", it's your turn!");
+      //Show the score board
       $('#points').show();
     }
   }
