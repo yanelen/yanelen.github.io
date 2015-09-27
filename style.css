@@ -58,7 +58,7 @@ body {
 #rematch {
   z-index: 1;
   position:absolute;
-  top: -275px;
+  top: -265px;
 }
 
 .button {
@@ -145,7 +145,7 @@ body {
   text-align: center;
   z-index: 1;
   position: absolute;
-  top: 134px;
+  top: 132px;
   margin-left: 20px;
 }
 
