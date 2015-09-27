@@ -10,11 +10,13 @@ The app is visible at: http://yanelen.github.io/
 
 Two players can play this game on one machine.
 
-The game is preceded by typing each player's name in the text field and confirm the name by pressing the "enter" key. The first player is Player X and the second player is Player O. The game will then begin. Players alternate placing Xs and Os following the screen that tells whose turn it is.
+The game is preceded by typing each player's name in the text field and confirm the name by pressing the "enter" key. The first player is Player X and the second player is Player O.
+
+The game will then begin. Players alternate placing Xs and Os following the screen that tells whose turn it is.
+
+After each game, either player clicks the "REMATCH" button to start a new game.
 
 The game board keeps track of Player X vs. Player O wins.
-
-After each game the players click the "REMATCH" button to start a new game.
 
 
 ### Getting Started
