@@ -1,4 +1,4 @@
-### README: Tic Tac Toe by Yanelen Huang
+## README: Tic Tac Toe by Yanelen Huang
 
 Tic Tac Toe version 1.0 9/27/15
 
