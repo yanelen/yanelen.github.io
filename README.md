@@ -10,7 +10,7 @@ The app is visible at: http://yanelen.github.io/
 
 Two players can play this game on one device.
 
-The game is preceded by typing each player's name in the text field and confirm the name by pressing the "enter" key. The first player is Player X and the second player is Player O.
+The game is preceded by entering each player's name. The first player is Player X and the second player is Player O.
 
 The game will then begin. Players place X and O alternately following the screen that tells whose turn it is.
 
