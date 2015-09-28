@@ -34,6 +34,6 @@ It is linked to style.css and script.js.
 
 style.css styles the app. script.js controls the functions of the app. The file has comments explaining how the code was developed.
 
-The app is responsive. The following code sets the width of the app to the width of the device it is viewed on: ```<meta name="viewport" content="width=device-width" />```
+The app is responsive. The following code sets the width of the app to the width of the device it is viewed on: ```<meta name="viewport" content="width=device-width" />``` Everything is above the fold on the mobile device. 
 
 This app was developed by Yanelen Huang as the first project in Web Development Immersive at General Assembly New York in September 2015.
