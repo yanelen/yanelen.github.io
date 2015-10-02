@@ -19,7 +19,7 @@ var game = {
   scoreX: 0,
   //Store the value to render on the gameboard
   scoreO: 0,
-  //Set game ober to false
+  //Set game over to false
   gameOver: false,
 
   // X's turn if counter is odd, O's turn if counter is even
@@ -139,7 +139,7 @@ var game = {
         this.oWin();
       }
     }
-    //If 10 moves has been made and no one wins, the game is a tie.
+    //If 10 moves have been made and no one wins, the game is a tie.
     if (this.count === 10 && this.gameOver === false) {
       $('.square').unbind();
       $('#message').text("Tie!");
